@@ -19,10 +19,10 @@
 
   function applyTheme(theme) {
     if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark');
       if (toggle) toggle.textContent = '☀️';
     } else {
-      document.documentElement.removeAttribute('data-theme');
+      document.documentElement.classList.remove('dark');
       if (toggle) toggle.textContent = '🌙';
     }
   }
@@ -35,30 +35,12 @@
 
   if (toggle) {
     toggle.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      const isDark = document.documentElement.classList.contains('dark');
+      const next = isDark ? 'light' : 'dark';
       localStorage.setItem('theme', next);
       applyTheme(next);
     });
   }
-})();
-
-/* ── Dark Mode CSS Variables ── */
-(function () {
-  const style = document.createElement('style');
-  style.textContent = `
-    [data-theme="dark"] {
-      --color-text: #f3f4f6;
-      --color-text-light: #9ca3af;
-      --color-bg: #111827;
-      --color-bg-alt: #1f2937;
-      --color-bg-dark: #0f172a;
-      --color-border: #374151;
-      --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-  `;
-  document.head.appendChild(style);
 })();
 
 /* ── Form Validation ── */

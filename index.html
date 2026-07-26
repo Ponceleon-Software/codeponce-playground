@@ -8,201 +8,228 @@
   <meta property="og:description" content="Laboratorio Open Source de Ingeniería" />
   <meta property="og:type" content="website" />
   <title>CodePonce Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#6366f1', dark: '#4f46e5' },
+            secondary: '#ec4899',
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-white">
 
-  <header>
-    <nav>
-      <a href="/">
-        <img src="https://picsum.photos/seed/logo/100/100" alt="Logo CodePonce Playground" width="50" height="50" />
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav class="flex items-center justify-between max-w-6xl mx-auto px-8 py-4">
+      <a href="/" class="flex items-center gap-2 font-bold text-xl text-gray-800 hover:no-underline">
+        <img src="https://picsum.photos/seed/logo/100/100" alt="Logo CodePonce Playground" class="w-10 h-10" />
         <span>CodePonce</span>
       </a>
-      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-2" aria-label="Abrir menú" aria-expanded="false">
+        <span class="block w-6 h-0.5 bg-gray-800 rounded"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 rounded"></span>
+        <span class="block w-6 h-0.5 bg-gray-800 rounded"></span>
       </button>
-      <ul id="nav-menu">
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#features">Características</a></li>
-        <li><a href="#about">Nosotros</a></li>
-        <li><a href="#team">Equipo</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#pricing">Precios</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contacto</a></li>
+      <ul id="nav-menu" class="hidden md:flex items-center gap-6">
+        <li><a href="#hero" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Inicio</a></li>
+        <li><a href="#features" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Características</a></li>
+        <li><a href="#about" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Nosotros</a></li>
+        <li><a href="#team" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Equipo</a></li>
+        <li><a href="#testimonials" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Testimonios</a></li>
+        <li><a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Precios</a></li>
+        <li><a href="#faq" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">FAQ</a></li>
+        <li><a href="#contact" class="text-sm font-medium text-gray-500 hover:text-indigo-500 transition-colors">Contacto</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Cambiar modo oscuro">🌙</button>
+      <button id="theme-toggle" class="bg-transparent border border-gray-200 rounded px-2 py-1 text-lg cursor-pointer hover:bg-gray-100 transition-colors" aria-label="Cambiar modo oscuro">🌙</button>
     </nav>
   </header>
 
   <main>
 
-    <section id="hero">
-      <h1>CodePonce Playground</h1>
-      <p>El laboratorio donde convertís teoría en experiencia real. Colaborá, contribuí y construí tu portafolio.</p>
-      <a href="#features">Comenzá ahora</a>
+    <section id="hero" class="flex flex-col items-center justify-center text-center min-h-[80vh] px-8 py-16 bg-gradient-to-br from-indigo-500 to-pink-500 text-white">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">CodePonce Playground</h1>
+      <p class="text-lg max-w-xl mb-10 opacity-90">El laboratorio donde convertís teoría en experiencia real. Colaborá, contribuí y construí tu portafolio.</p>
+      <a href="#features" class="inline-block px-8 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all">Comenzá ahora</a>
     </section>
 
-    <section id="features">
-      <h2>Características</h2>
-      <div>
-        <article>
-          <img src="https://picsum.photos/seed/feature1/400/300" alt="Colaboración en equipo" loading="lazy" />
-          <h3>Colaboración real</h3>
-          <p>Trabajá con otros estudiantes usando Pull Requests, code reviews y Git flow profesional.</p>
+    <section id="features" class="py-16 px-8 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Características</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all">
+          <img src="https://picsum.photos/seed/feature1/400/300" alt="Colaboración en equipo" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Colaboración real</h3>
+            <p class="text-sm text-gray-500">Trabajá con otros estudiantes usando Pull Requests, code reviews y Git flow profesional.</p>
+          </div>
         </article>
-        <article>
-          <img src="https://picsum.photos/seed/feature2/400/300" alt="Aprendizaje progresivo" loading="lazy" />
-          <h3>Niveles progresivos</h3>
-          <p>Empezá con HTML y llegá hasta React y APIs. Cada nivel suma una tecnología nueva.</p>
+        <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all">
+          <img src="https://picsum.photos/seed/feature2/400/300" alt="Aprendizaje progresivo" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Niveles progresivos</h3>
+            <p class="text-sm text-gray-500">Empezá con HTML y llegá hasta React y APIs. Cada nivel suma una tecnología nueva.</p>
+          </div>
         </article>
-        <article>
-          <img src="https://picsum.photos/seed/feature3/400/300" alt="Portafolio público" loading="lazy" />
-          <h3>Portafolio vivo</h3>
-          <p>Cada PR mergeado es evidencia de tu trabajo. Tu historial de contribuciones habla por vos.</p>
+        <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all">
+          <img src="https://picsum.photos/seed/feature3/400/300" alt="Portafolio público" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Portafolio vivo</h3>
+            <p class="text-sm text-gray-500">Cada PR mergeado es evidencia de tu trabajo. Tu historial de contribuciones habla por vos.</p>
+          </div>
         </article>
-        <article>
-          <img src="https://picsum.photos/seed/feature4/400/300" alt="Mentoría" loading="lazy" />
-          <h3>Mentoría entre pares</h3>
-          <p>Los alumnos avanzados se convierten en maintainers y guían a los nuevos.</p>
+        <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all">
+          <img src="https://picsum.photos/seed/feature4/400/300" alt="Mentoría" class="w-full h-48 object-cover" loading="lazy" />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Mentoría entre pares</h3>
+            <p class="text-sm text-gray-500">Los alumnos avanzados se convierten en maintainers y guían a los nuevos.</p>
+          </div>
         </article>
       </div>
     </section>
 
-    <section id="about">
-      <h2>Sobre el proyecto</h2>
-      <article>
-        <h3>¿Qué es CodePonce Playground?</h3>
-        <p>
-          Es un repositorio abierto donde estudiantes de CodePonce aplican
-          los conocimientos adquiridos en la plataforma. Acá no hay teoría —
-          solo práctica colaborativa con tecnologías web reales.
-        </p>
-        <figure>
-          <img src="https://picsum.photos/seed/about/600/400" alt="Estudiantes colaborando en código" loading="lazy" />
-          <figcaption>Estudiantes colaborando en el playground durante un sprint.</figcaption>
+    <section id="about" class="py-16 px-8 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-8">Sobre el proyecto</h2>
+      <article class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-4">¿Qué es CodePonce Playground?</h3>
+        <p class="text-gray-500 mb-6">Es un repositorio abierto donde estudiantes de CodePonce aplican los conocimientos adquiridos en la plataforma. Acá no hay teoría — solo práctica colaborativa con tecnologías web reales.</p>
+        <figure class="text-center">
+          <img src="https://picsum.photos/seed/about/600/400" alt="Estudiantes colaborando en código" class="rounded-lg mx-auto" loading="lazy" />
+          <figcaption class="text-sm text-gray-500 mt-2 italic">Estudiantes colaborando en el playground durante un sprint.</figcaption>
         </figure>
       </article>
     </section>
 
-    <section id="team">
-      <h2>Nuestro equipo</h2>
-      <div>
-        <figure>
-          <img src="https://picsum.photos/seed/person1/200/200" alt="Foto de Ana García" loading="lazy" />
+    <section id="team" class="py-16 px-8 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Nuestro equipo</h2>
+      <div class="flex justify-center gap-8 flex-wrap">
+        <figure class="text-center p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+          <img src="https://picsum.photos/seed/person1/200/200" alt="Foto de Ana García" class="w-28 h-28 rounded-full object-cover mx-auto mb-4" loading="lazy" />
           <figcaption>
-            <strong>Ana García</strong>
-            <span>Instructora Frontend</span>
+            <strong class="block text-lg">Ana García</strong>
+            <span class="text-sm text-gray-500">Instructora Frontend</span>
           </figcaption>
         </figure>
-        <figure>
-          <img src="https://picsum.photos/seed/person2/200/200" alt="Foto de Carlos López" loading="lazy" />
+        <figure class="text-center p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+          <img src="https://picsum.photos/seed/person2/200/200" alt="Foto de Carlos López" class="w-28 h-28 rounded-full object-cover mx-auto mb-4" loading="lazy" />
           <figcaption>
-            <strong>Carlos López</strong>
-            <span>Instructor Backend</span>
+            <strong class="block text-lg">Carlos López</strong>
+            <span class="text-sm text-gray-500">Instructor Backend</span>
           </figcaption>
         </figure>
-        <figure>
-          <img src="https://picsum.photos/seed/person3/200/200" alt="Foto de María Pérez" loading="lazy" />
+        <figure class="text-center p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+          <img src="https://picsum.photos/seed/person3/200/200" alt="Foto de María Pérez" class="w-28 h-28 rounded-full object-cover mx-auto mb-4" loading="lazy" />
           <figcaption>
-            <strong>María Pérez</strong>
-            <span>DevOps & CI/CD</span>
+            <strong class="block text-lg">María Pérez</strong>
+            <span class="text-sm text-gray-500">DevOps & CI/CD</span>
           </figcaption>
         </figure>
       </div>
     </section>
 
-    <section id="testimonials">
-      <h2>Testimonios</h2>
-      <div>
-        <blockquote>
-          <p>"El playground me enseñó más que cualquier tutorial. Aprendí Git de verdad resolviendo conflictos con mis compañeros."</p>
-          <cite>— Juan, estudiante de CodePonce</cite>
+    <section id="testimonials" class="py-16 px-8 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-12">Testimonios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <blockquote class="bg-white p-8 rounded-lg border-l-4 border-indigo-500 shadow-sm">
+          <p class="italic mb-4">"El playground me enseñó más que cualquier tutorial. Aprendí Git de verdad resolviendo conflictos con mis compañeros."</p>
+          <cite class="not-italic font-semibold text-indigo-600">— Juan, estudiante de CodePonce</cite>
         </blockquote>
-        <blockquote>
-          <p>"Mi primer PR fue aterrador. Después de 10, ya me sentía seguro para contribuir a proyectos open source reales."</p>
-          <cite>— Lucía, estudiante de CodePonce</cite>
+        <blockquote class="bg-white p-8 rounded-lg border-l-4 border-indigo-500 shadow-sm">
+          <p class="italic mb-4">"Mi primer PR fue aterrador. Después de 10, ya me sentía seguro para contribuir a proyectos open source reales."</p>
+          <cite class="not-italic font-semibold text-indigo-600">— Lucía, estudiante de CodePonce</cite>
         </blockquote>
       </div>
     </section>
 
-    <section id="pricing">
-      <h2>Planes</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Plan</th>
-            <th>Acceso a niveles</th>
-            <th>Code Reviews</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Principiante</td>
-            <td>Niveles 1-3</td>
-            <td>Automáticos</td>
-            <td>Gratis</td>
-          </tr>
-          <tr>
-            <td>Intermedio</td>
-            <td>Niveles 1-5</td>
-            <td>Con maintainers</td>
-            <td>$9/mes</td>
-          </tr>
-          <tr>
-            <td>Avanzado</td>
-            <td>Todos los niveles</td>
-            <td>Prioritarios + 1:1</td>
-            <td>$19/mes</td>
-          </tr>
-        </tbody>
-      </table>
+    <section id="pricing" class="py-16 px-8 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Planes</h2>
+      <div class="overflow-hidden rounded-lg shadow">
+        <table class="w-full border-collapse">
+          <thead class="bg-indigo-500 text-white">
+            <tr>
+              <th class="p-4 text-left font-semibold">Plan</th>
+              <th class="p-4 text-left font-semibold">Acceso a niveles</th>
+              <th class="p-4 text-left font-semibold">Code Reviews</th>
+              <th class="p-4 text-left font-semibold">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 hover:bg-gray-50 even:bg-indigo-50 even:hover:bg-gray-50 transition-colors">
+              <td class="p-4">Principiante</td>
+              <td class="p-4">Niveles 1-3</td>
+              <td class="p-4">Automáticos</td>
+              <td class="p-4">Gratis</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-gray-50 even:bg-indigo-50 even:hover:bg-gray-50 transition-colors">
+              <td class="p-4">Intermedio</td>
+              <td class="p-4">Niveles 1-5</td>
+              <td class="p-4">Con maintainers</td>
+              <td class="p-4">$9/mes</td>
+            </tr>
+            <tr class="hover:bg-gray-50 even:bg-indigo-50 even:hover:bg-gray-50 transition-colors">
+              <td class="p-4">Avanzado</td>
+              <td class="p-4">Todos los niveles</td>
+              <td class="p-4">Prioritarios + 1:1</td>
+              <td class="p-4">$19/mes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section id="faq">
-      <h2>Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Necesito experiencia previa?</summary>
-        <p>No. El nivel 1 empieza desde cero con HTML. Si ya sabés algo, podés saltar a niveles más avanzados.</p>
-      </details>
-      <details>
-        <summary>¿Cuánto tiempo toma completar un nivel?</summary>
-        <p>Depende de tu ritmo. Cada nivel tiene entre 6 y 8 desafíos. Calculá 1-2 semanas por nivel si dedicás unas horas por semana.</p>
-      </details>
-      <details>
-        <summary>¿Puedo contribuir desde cualquier país?</summary>
-        <p>Sí. Todo es online y asíncrono. Trabajás a tu ritmo desde cualquier parte del mundo.</p>
-      </details>
-      <details>
-        <summary>¿Cómo sé que mi PR está bien?</summary>
-        <p>Un maintainer revisará tu PR y te dará feedback. Si todo está correcto, lo mergea y quedará registrado en tu historial.</p>
-      </details>
+    <section id="faq" class="py-16 px-8 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-12">Preguntas frecuentes</h2>
+      <div class="max-w-2xl mx-auto space-y-4">
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="p-4 font-semibold cursor-pointer hover:bg-gray-50 transition-colors">¿Necesito experiencia previa?</summary>
+          <p class="p-4 pt-0 text-gray-500">No. El nivel 1 empieza desde cero con HTML. Si ya sabés algo, podés saltar a niveles más avanzados.</p>
+        </details>
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="p-4 font-semibold cursor-pointer hover:bg-gray-50 transition-colors">¿Cuánto tiempo toma completar un nivel?</summary>
+          <p class="p-4 pt-0 text-gray-500">Depende de tu ritmo. Cada nivel tiene entre 6 y 8 desafíos. Calculá 1-2 semanas por nivel si dedicás unas horas por semana.</p>
+        </details>
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="p-4 font-semibold cursor-pointer hover:bg-gray-50 transition-colors">¿Puedo contribuir desde cualquier país?</summary>
+          <p class="p-4 pt-0 text-gray-500">Sí. Todo es online y asíncrono. Trabajás a tu ritmo desde cualquier parte del mundo.</p>
+        </details>
+        <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <summary class="p-4 font-semibold cursor-pointer hover:bg-gray-50 transition-colors">¿Cómo sé que mi PR está bien?</summary>
+          <p class="p-4 pt-0 text-gray-500">Un maintainer revisará tu PR y te dará feedback. Si todo está correcto, lo mergea y quedará registrado en tu historial.</p>
+        </details>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contactanos</h2>
+    <section id="contact" class="py-16 px-8 max-w-xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Contactanos</h2>
       <form action="#" method="post">
-        <fieldset>
-          <legend>Datos personales</legend>
-          <div>
-            <label for="name">Nombre completo:</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+        <fieldset class="border border-gray-200 rounded-lg p-8 mb-6">
+          <legend class="font-bold text-lg px-2">Datos personales</legend>
+          <div class="mb-4">
+            <label for="name" class="block font-medium text-sm mb-1">Nombre completo:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required class="w-full p-2 border border-gray-200 rounded text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block font-medium text-sm mb-1">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required class="w-full p-2 border border-gray-200 rounded text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" />
           </div>
           <div>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
-          </div>
-          <div>
-            <label for="phone">Teléfono (opcional):</label>
-            <input type="tel" id="phone" name="phone" placeholder="+54 11 1234-5678" />
+            <label for="phone" class="block font-medium text-sm mb-1">Teléfono (opcional):</label>
+            <input type="tel" id="phone" name="phone" placeholder="+54 11 1234-5678" class="w-full p-2 border border-gray-200 rounded text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" />
           </div>
         </fieldset>
-        <fieldset>
-          <legend>Mensaje</legend>
-          <div>
-            <label for="subject">Asunto:</label>
-            <select id="subject" name="subject" required>
+        <fieldset class="border border-gray-200 rounded-lg p-8 mb-6">
+          <legend class="font-bold text-lg px-2">Mensaje</legend>
+          <div class="mb-4">
+            <label for="subject" class="block font-medium text-sm mb-1">Asunto:</label>
+            <select id="subject" name="subject" required class="w-full p-2 border border-gray-200 rounded text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all">
               <option value="">Seleccioná un asunto</option>
               <option value="consulta">Consulta general</option>
               <option value="soporte">Soporte técnico</option>
@@ -210,59 +237,59 @@
               <option value="otro">Otro</option>
             </select>
           </div>
-          <div>
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="6" placeholder="Escribí tu mensaje..." required></textarea>
+          <div class="mb-4">
+            <label for="message" class="block font-medium text-sm mb-1">Mensaje:</label>
+            <textarea id="message" name="message" rows="6" placeholder="Escribí tu mensaje..." required class="w-full p-2 border border-gray-200 rounded text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"></textarea>
           </div>
           <div>
-            <label for="newsletter">
-              <input type="checkbox" id="newsletter" name="newsletter" checked />
+            <label class="text-sm">
+              <input type="checkbox" id="newsletter" name="newsletter" checked class="mr-1" />
               Quiero recibir novedades por correo
             </label>
           </div>
         </fieldset>
-        <button type="submit">Enviar mensaje</button>
+        <button type="submit" class="w-full py-3 bg-indigo-500 text-white font-semibold text-lg rounded-lg hover:bg-indigo-600 active:translate-y-0 transition-all">Enviar mensaje</button>
       </form>
     </section>
 
-    <section id="stats">
-      <h2>Estadísticas del repositorio</h2>
-      <div id="github-stats">
-        <p>Cargando estadísticas...</p>
+    <section id="stats" class="py-16 px-8 bg-gray-50">
+      <h2 class="text-3xl font-bold text-center mb-8">Estadísticas del repositorio</h2>
+      <div id="github-stats" class="flex justify-center gap-8 flex-wrap max-w-3xl mx-auto">
+        <p class="text-gray-500">Cargando estadísticas...</p>
       </div>
     </section>
 
-    <div id="visit-counter">Visitas: <span id="visit-count">0</span></div>
+    <div id="visit-counter" class="text-center py-4 bg-gray-50 text-sm text-gray-500">Visitas: <span id="visit-count">0</span></div>
 
   </main>
 
-  <button id="back-to-top" aria-label="Volver arriba">↑</button>
+  <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-500 text-white rounded-full text-xl shadow-lg hover:bg-indigo-600 hover:-translate-y-0.5 transition-all z-50 border-none cursor-pointer" aria-label="Volver arriba">↑</button>
 
-  <footer>
-    <div>
-      <h4>CodePonce Playground</h4>
-      <p>Aprendé haciendo. Colaborá creciendo.</p>
+  <footer class="bg-gray-900 text-white py-16 px-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="text-lg font-semibold mb-4">CodePonce Playground</h4>
+        <p class="text-sm opacity-80">Aprendé haciendo. Colaborá creciendo.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Enlaces</h4>
+        <ul class="space-y-2">
+          <li><a href="#hero" class="text-sm text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+          <li><a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors">Características</a></li>
+          <li><a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+          <li><a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Recursos</h4>
+        <ul class="space-y-2">
+          <li><a href="https://codeponce.app" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-white transition-colors">CodePonce App</a></li>
+          <li><a href="./CONTRIBUTING.md" class="text-sm text-gray-400 hover:text-white transition-colors">Guía de contribución</a></li>
+          <li><a href="./CODE_OF_CONDUCT.md" class="text-sm text-gray-400 hover:text-white transition-colors">Código de conducta</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4>Enlaces</h4>
-      <ul>
-        <li><a href="#hero">Inicio</a></li>
-        <li><a href="#features">Características</a></li>
-        <li><a href="#about">Nosotros</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Recursos</h4>
-      <ul>
-        <li><a href="https://codeponce.app" target="_blank" rel="noopener">CodePonce App</a></li>
-        <li><a href="./CONTRIBUTING.md">Guía de contribución</a></li>
-        <li><a href="./CODE_OF_CONDUCT.md">Código de conducta</a></li>
-      </ul>
-    </div>
-    <div>
-      <p>&copy; 2026 Ponceleon Software. Todos los derechos reservados.</p>
-    </div>
+    <p class="text-center text-sm opacity-60 border-t border-gray-800 pt-8 max-w-6xl mx-auto">&copy; 2026 Ponceleon Software. Todos los derechos reservados.</p>
   </footer>
 
   <script src="scripts.js"></script>
