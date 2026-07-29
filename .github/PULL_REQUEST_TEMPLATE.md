@@ -18,6 +18,10 @@
 
 <!-- level-1, level-2, level-3, level-4, level-5, level-6 -->
 
+## Tipo de cambio
+
+<!-- feat, fix, style, docs, refactor, chore -->
+
 ## Screenshots
 
 <!-- Si aplica, agregá imágenes del antes/después -->

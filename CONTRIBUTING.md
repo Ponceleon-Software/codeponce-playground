@@ -4,32 +4,45 @@ Gracias por querer contribuir 🎉 Este documento describe el flujo completo par
 
 ---
 
-## 📋 Flujo de contribución
+## 📋 Flujo de contribución (principiante)
+
+Si es tu primera vez contribuyendo a un proyecto open source, empezá por aquí:
 
 ```text
 1. Elegí un Issue
        ↓
 2. Asignátelo (comentá "Me interesa")
        ↓
-3. Forkeá el repo (si no lo hiciste)
+3. Forkeá el repo
        ↓
 4. Cloná tu fork localmente
        ↓
-5. Creá una branch con el formato correcto
+5. Resolvé el desafío
        ↓
-6. Resolvé el desafío
+6. Agregá tu firma en signatures/level-N.md
        ↓
-7. Agregá tu firma en signatures/level-N.md
+7. Commit con conventional commit
        ↓
-8. Commit con conventional commit
+8. Push a tu fork
        ↓
-9. Push a tu fork
+9. Abrí un Pull Request
        ↓
-10. Abrí un Pull Request
+10. Esperá la review
        ↓
-11. Esperá la review
-       ↓
-12. ¡PR mergeado! 🎉
+11. ¡PR mergeado! 🎉
+```
+
+> 💡 **¿No sabés qué es un fork, clone o PR?** Completá las clases de la [App CodePonce](https://codeponce.app) empezando por la **Clase 00 — ¿Qué es GitHub?**. Ahí vas a aprender cada concepto paso a paso.
+
+### 📋 Flujo con ramas (avanzado)
+
+Si ya dominás el flujo básico y querés usar ramas:
+
+```text
+1. Elegí un Issue → Asignátelo → Fork → Clone
+2. Creá una branch: feature/{tu-usuario-github}-issue-{N}
+3. Resolvé el desafío en tu branch
+4. Commit → Push → PR desde tu branch
 ```
 
 ---
@@ -43,6 +56,8 @@ feature/{tu-usuario-github}-issue-{numero-del-issue}
 Ejemplos:
 - `feature/juanperez-issue-23`
 - `feature/maria123-issue-5`
+
+> 💡 **Principiante:** Trabajá directamente en `main`. Las ramas son para cuando ya te sientas cómodo con el flujo básico.
 
 ---
 
@@ -91,13 +106,16 @@ Este proyecto sigue un [Código de Conducta](./CODE_OF_CONDUCT.md). Al participa
 ## ❓ Preguntas frecuentes
 
 **¿Puedo trabajar en más de un Issue a la vez?**
-Sí, pero con branches separadas. Un branch = un Issue.
+Sí, pero con branches separadas (o commits separados en `main`). Una tarea = un PR.
 
 **¿Qué hago si alguien ya está trabajando en el Issue que quiero?**
 Buscá otro Issue. Podés filtrar por `good-first-issue` o `difficulty: beginner`.
 
 **¿Qué pasa si mi PR tiene conflictos?**
-No te preocupes, es parte del aprendizaje. Resolvelos localmente con `git merge master` y actualizá tu PR. Si necesitás ayuda, preguntá en el PR mismo.
+No te preocupes, es parte del aprendizaje. Resolvelos localmente con `git pull upstream main` y actualizá tu PR. Si necesitás ayuda, preguntá en el PR mismo.
 
 **¿Puedo pedir review a un compañero?**
 Sí. Mencioná a otro contributor en tu PR y pedile que revise.
+
+**¿Necesito usar branches?**
+No al principio. Podés trabajar directamente en `main`. Las ramas se recomiendan cuando trabajes en múltiples tareas a la vez. La **Clase 16** de la app enseña ramas cuando estés listo.

@@ -2,7 +2,7 @@
 
 **Laboratorio Open Source de Ingeniería**
 
-Bienvenido al playground de CodePonce. Este repositorio es el espacio práctico donde aplicarás todo lo que aprendes en la [App CodePonce](https://codeponce.app). No es un curso — es un proyecto real donde colaborarás con otros estudiantes usando Git, HTML, CSS, JavaScript y más.
+Bienvenido al playground de CodePonce. Este repositorio es el espacio práctico donde aplicarás todo lo que aprendes en la [App CodePonce](https://codeponce.app). No es un curso — es un proyecto real donde colaborarás con otros estudiantes.
 
 ```text
 CodePonce App          →   Aprendés la teoría
@@ -14,16 +14,16 @@ Pull Requests          →   Tu evidencia y portafolio
 
 ---
 
-## 🚀 Cómo empezar
+## 🚀 ¿Primera vez?
 
-1. Hacé **fork** de este repositorio
-2. **Cloná** tu fork: `git clone https://github.com/tu-usuario/codeponce-playground.git`
-3. Elegí un **nivel** (abajo están los niveles disponibles)
-4. Buscá un **Issue** con la etiqueta `good-first-issue`
-5. Creá una **branch**: `feature/tu-usuario-issue-N`
-6. Resolvé el desafío y abrí un **Pull Request**
+No empieces por aquí. Seguí este camino:
 
-> ¿Primera vez? Leé [`CONTRIBUTING.md`](./CONTRIBUTING.md) para el flujo completo.
+1. Completá las clases en la [App CodePonce](https://codeponce.app)
+2. Las clases **00 a 07** te guían desde cero: qué es GitHub, fork, clone y tu primer PR
+3. Cuando llegues a la **Clase 07** ("Tu primer flujo completo"), volvé aquí
+4. Ahí ya sabrás qué hacer
+
+> ¿Ya tenés experiencia con Git y GitHub? Leé [`CONTRIBUTING.md`](./CONTRIBUTING.md) y empezá a contribuir.
 
 ---
 
